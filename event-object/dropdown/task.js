@@ -11,9 +11,10 @@ function closeMenu() {
 mainVal.addEventListener('click', openMenu);
 
 
-var listVal = Array.from(document.querySelectorAll('.dropdown__item'));
+let listVal = Array.from(document.querySelectorAll('.dropdown__item'));
 listVal.forEach((item) => {
-    item.addEventListener("click", () => {
+    item.addEventListener("click", (event) => {
+        event.preventDefault()
         const newValue = item.querySelector(".dropdown__link").textContent;
         closeMenu();
         mainVal.textContent = newValue;
